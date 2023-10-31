@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+    }
+    .rockpaperscissors{
+        
+       text-align: center;
+       border: 1px solid;
+    }
+    .score{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+    .choosemove{
+        text-align: center;
+    }
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+/* .pic{
+    border: 1px solid;
+    width: 500px;
+    height: 400px;
+margin: auto;
+}
+.pic1{
+    border: 1px solid;
+    width: 100px;
+    height: 400px;
+}
+.pic2{
+    border: 1px solid;
+    width: 100px;
+    height: 400px;
+}
+.pic3{
+    border: 1px solid;
+    width: 100px;
+    height: 400px;
+}
+.imgsection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.picolcu{
+    height: 400px;
+    width: 500px;
+} */
+</style>
+<body>
+    <!-- <div  class="pic"><img src="" alt=""id="mainIMG" class="picolcu"></div>
+    <div id="imgsec" class="imgsection">
+        <div class="pic1"><img src="https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg" alt=""id="imgone" style="height: 400px; width: 100px;"></div>
+        <div  class="pic2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSuj0CQ-YzX9ty6YCGCjPzU_heu-MBggztEFlU-Gb&s" alt="" id="imgtwo" style="height: 400px; width: 100px;"></div>
+        <div  class="pic3"><img src="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg" alt="" id="imgthree" style="height: 400px; width: 100px;"></div>
+    </div> -->
+    <div class="rockpaperscissors">
+<h1 style="font-size: 70px;">rockpaperscissors</h1>
+<div class="score">
+    <div class="player">
+<h1>Player</h1>
+<p class="player-count" style="font-size: 50px;"id='playerscore'>0</p>
+    </div>
+    <div class="computer">
+<h1>Computer</h1>
+<p class="computer-count" style="font-size: 50px;" id="computerscore">0</p>
+    </div>
+</div>
+<div class="choosemove">
+    <h1>Choose your move</h1>
+    <p>Choose left:3</p>
+    <div class="buttons">
+        <button class="rock" id="rockbtn">Rock</button>
+        <button class="paper"id='paperbtn'>Paper</button>
+        <button class="scissors" id="scissorsbtn">Scissors</button>
+    </div>
+    <p class="yourchoose" id="mychoosetxt">yourchoose:</p>
+    <p class="computerchoose" id="itschoosetxt">computer's choose:</p>
+    <p id="result"></p>
+</div>
+    </div>
+    <script>
+      let rock=document.getElementById('rockbtn')
+      let paper=document.getElementById('paperbtn')
+      let scissors=document.getElementById('scissorsbtn')
+let playerscore=document.getElementById('playerscore')
+let computerscore=document.getElementById('computerscore')
+let mychoose=document.getElementById('mychoosetxt')
+let itschoose=document.getElementById('itschoosetxt')
+let result=document.getElementById('result')
+const arr=['rock','paper','scissors']
+function getRandomInt(max) {
+  return Math.floor(Math.random() * 3);
+}
+rock.addEventListener('click',()=>{
+mychoose.innerHTML=`your choose:rock`
+itschoose.innerHTML=`computer's choose:${arr[getRandomInt()]}`
+})
+paper.addEventListener('click',()=>{
+mychoose.innerHTML=`your choose:paper`
+itschoose.innerHTML=`computer's choose:${arr[getRandomInt()]}`
+})
+scissors.addEventListener('click',()=>{
+mychoose.innerHTML=`your choose:scissors`
+itschoose.innerHTML=`computer's choose:${arr[getRandomInt()]}`
+})
+ if(mychoose.innerHTML == `your choose:paper`){
+            if(itschoose.innerHTML=`computer's choose:scissors`){
+                result.textContent = 'Computer Won';
+                // computerScore++;
+                // computerScoreBoard.textContent = computerScore;
+    
+            }
+            else{
+                result.textContent = 'Player Won'
+                // playerScore++;
+                // playerScoreBoard.textContent = playerScore;
+            }
+        }
+        if(mychoose.innerHTML == `your choose:rock`){
+            if(itschoose.innerHTML=`computer's choose:paper`){
+                result.textContent = 'Computer Won';
+                // computerScore++;
+                // computerScoreBoard.textContent = computerScore;
+    
+            }
+            else{
+                result.textContent = 'Player Won'
+                // playerScore++;
+                // playerScoreBoard.textContent = playerScore;
+            }
+        }
+        if(mychoose.innerHTML == `your choose:paper`){
+            if(itschoose.innerHTML=`computer's choose:scissors`){
+                result.textContent = 'Computer Won';
+                // computerScore++;
+                // computerScoreBoard.textContent = computerScore;
+    
+            }
+            else{
+                result.textContent = 'Player Won'
+                // playerScore++;
+                // playerScoreBoard.textContent = playerScore;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let img=document.getElementById('mainIMG')
+        // let img1=document.getElementById('imgone')
+        // let img2=document.getElementById('imgtwo')
+        // let img3=document.getElementById('imgthree')
+        // img1.addEventListener('click',()=>{img.src=img1.src})
+        // img2.addEventListener('click',()=>{img.src=img2.src})
+        // img3.addEventListener('click',()=>{img.src=img3.src})
+    </script>
+</body>
+</html>
